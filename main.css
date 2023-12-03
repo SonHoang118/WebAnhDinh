@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -230,7 +231,22 @@ a {
     font-size: 25px;
     border-radius: 50%;
     right: 30px;
-    bottom: 80px;
+    bottom: 130px;
+    box-shadow: 0 0 15px 4px rgba(195, 195, 195, 0.4196078431);
+    z-index: 10000;
+}
+.messengerBtn {
+    cursor: pointer;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background-color: #2794ff;
+    text-align: center;
+    line-height: 60px;
+    font-size: 35px;
+    border-radius: 50%;
+    right: 30px;
+    bottom: 30px;
     box-shadow: 0 0 15px 4px rgba(195, 195, 195, 0.4196078431);
     z-index: 10000;
 }
@@ -319,33 +335,133 @@ a {
         transform: rotate(0);
     }
 }
-
-.btn_wrap{
-    width: 100%;min-height: 60px;
-    position: absolute;
-    top: 6690px;
+.block{
+    width: 100%;
+    height: 0;
+    /* background-color: red; */
+    background-image: linear-gradient(90deg,#fffffd,#ffbe00);
 }
 
 
-.btnBuy {
+.btn_wrap {
+    width: 100%;
+    min-height: 60px;
     position: absolute;
-    background-color: aqua;
+    top: 7135px;
+    /* background-color: red; */
+}
+
+.price_list{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-325px);
+    width: 370px;
+    height: 245px;
+    background-color: #fffbd5;
     z-index: 99;
+    border-radius: 10px;
+    border: 5px solid #b18330;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.price{
+    display: inline-block;
+    font-weight: 700;
+    font-size: 50px;
+    color: #b18330;
+    letter-spacing: -2.5px;
+    position: relative;
+    transform: translateX(-30px);
+    user-select: none;
+}
+.price::after{
+    content: "Hộp";
+    position: absolute;
+    font-size: 21px;
+    letter-spacing: -1.5px;
+    left: 105%;
+    /* top: ; */
+}
+#price_1::before{
+    content: "110 GR";
+    position: absolute;
+    width: 100px;
+    font-size: 25px;
+    letter-spacing: -1.5px;
+    left: 100%;
+    top: 30px;
+    /* top: ; */
+}
+#price_2::before{
+    content: "200 GR";
+    position: absolute;
+    width: 100px;
+    font-size: 25px;
+    letter-spacing: -1.5px;
+    left: 100%;
+    top: 30px;
+    /* top: ; */
+}
+/* .price_des{
+    display: inline;
+    font-size: 26px;
+    background-color: red;
+} */
+
+
+.price_list::after{
+    content: "Giá chỉ";
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 50px;
+    top: -29px;
+    left: 50%;transform: translateX(-50%);
+    width: 140px;
+    height: 50px;
+    background-color: #b18330;
+    border-radius: 25px;
+}
+
+.btnBuy {
+    z-index: 99;
+    position: absolute;
+    background-image: linear-gradient(0, rgb(240 160 2), rgb(255 222 2));
+    border-radius: 30px;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+.btnBuy:hover{
+    filter: brightness(90%);
 }
 
 #btn1 {
-    width: 320px;
+    transform: translate(-50%,-110px);
+    width: 250px;
     height: 60px;
     left: 50%;
-    top: 1690px;
-    transform: translateX(-50%);
+    
 }
 
 #btn2 {
-    width: 320px;
+    width: 250px;
     height: 60px;
-    left: 9%;
-    /* top: 6680px; */
+    left: 11%;
 }
 
 
@@ -359,7 +475,7 @@ a {
 
 
 .slider_wrap {
-    height: 700px;
+    height: 900px;
     width: 100%;
     gap: 15px;
     position: relative;
@@ -375,14 +491,14 @@ a {
     left: 50%;
     transform: translateX(-50%);
     width: 95%;
-    height: 80%;
+    height: 85%;
     position: relative;
     border: 5px solid orange;
     overflow: hidden;
 }
 
 .slider_show {
-    width: 400%;
+    width: 500%;
     height: 100%;
     display: flex;
     position: absolute;
@@ -398,11 +514,13 @@ a {
 .slider_show_item img {
     width: 100%;
     height: auto;
-    object-position: center;
+    transform: translateY(-60px);
+    /* position: absolute; */
+    /* object-position: center; */
 }
 
 .slider_list_item img {
-    height: 100%;
+    width: 100%;
     object-fit: contain;
 }
 
@@ -478,14 +596,20 @@ a {
         font-size: 30px;
         line-height: 75px;
     }
+    .messengerBtn {
+        width: 75px;
+        height: 75px;
+        font-size: 45px;
+        line-height: 75px;
+    }
 
     .slider_wrap {
-        height: 350px;
+        height: 480px;
     }
 
     .slider_top {
         top: 10px;
-        height: 70%;
+        height: 80%;
     }
 
     .slider_bottom {
@@ -505,15 +629,21 @@ a {
         max-width: 500px;
     }
 
-    .btn_wrap{
-        top: 2730px;
+    .price_list{
+        transform: translate(-50%, -120px);
     }
+
+    .btn_wrap {
+        top: 3155px;
+        /* background-color: red; */
+    }
+
     #btn1 {
-        width: 200px;
-        height: 40px;
+        width: 250px;
+        height: 60px;
         left: 50%;
         top: 670px;
-        transform: translateX(-50%);
+        transform: translate(-50%, 245px);
     }
 
     #btn2 {
@@ -521,5 +651,10 @@ a {
         height: 40px;
         left: 6%;
         top: 0;
+        font-size: 20px;
+        line-height: 40px;
+    }
+    .block{
+        height: 180px;
     }
 }
